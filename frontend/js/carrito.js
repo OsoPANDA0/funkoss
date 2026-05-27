@@ -8,7 +8,7 @@ import { onAuthStateChanged }  from "https://www.gstatic.com/firebasejs/12.8.0/f
 // o simplemente reemplaza el valor por la URL de tu backend en Render.
 const API_URL = window.location.hostname === 'localhost'
     ? 'http://localhost:3000'
-    : 'https://TU-BACKEND.onrender.com'; // ← reemplaza con tu URL de Render
+    : 'https://funkoss-backend.onrender.com'; // ← reemplaza con tu URL de Render
 
 const cartItemsContainer = document.querySelector('.cart-items');
 const cartTotalEl        = document.getElementById('cart-total');
