@@ -1,0 +1,527 @@
+/* ==========================================================================
+   1. VARIABLES GLOBALES Y RESETEO
+   ========================================================================== */
+:root {
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
+    --accent-color: #0f172a;
+    --border-color: #e2e8f0;
+    --muted-text: #64748b;
+    --marvel-color: #ed1d24;
+    --anime-color: #3ab0f5;
+    --disney-color: #0065a3;
+    --halloween-color: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* ==========================================================================
+   2. NAVBAR Y ENCABEZADO (Común para todas las páginas)
+   ========================================================================== */
+header .navbar-brand {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #475569 !important;
+}
+
+.nav-link:hover {
+    color: #0f172a !important;
+}
+
+/* Control de estados de Firebase Auth */
+.logged-out { display: block; }
+.logged-in { display: none; }
+
+
+/* ==========================================================================
+   3. PÁGINA DE INICIO (Hero, Categorías y Productos)
+   ========================================================================== */
+/* Sección Hero */
+.hero {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: white;
+    padding: 120px 0;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    letter-spacing: -2.5px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.hero .lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: 0.85;
+    margin-bottom: 48px;
+}
+
+.btn-explorar {
+    background-color: #fff;
+    color: #0f172a;
+    border-radius: 50px;
+    padding: 16px 40px;
+    font-weight: 700;
+    transition: all 0.2s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-explorar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Tarjetas de Categoría */
+.category-container {
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+.category-card {
+    transition: all 0.3s;
+    border-radius: 16px;
+    overflow: hidden;
+    border: none;
+    padding: 24px;
+    text-decoration: none !important;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.category-card h4 {
+    font-weight: 800;
+    margin: 0;
+    color: white;
+}
+
+.category-marvel { background: var(--marvel-color); }
+.category-anime { background: var(--anime-color); }
+.category-disney { background: var(--disney-color); }
+.category-halloween { background: var(--halloween-color); }
+
+/* Tarjetas de Productos (Arreglado el error de p-3) */
+.product-card {
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    background: #ffffff;
+    padding: 1rem;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+  
+  /* OPCIÓN A: Efecto de iluminación con sombra (Ideal si el fondo es oscuro o quieres un brillo de color) */
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3); /* Cambia el color si quieres un brillo específico */
+
+  /* OPCIÓN B: Si tu fondo es claro, una sombra difusa simula que la tarjeta "se eleva" hacia la pantalla */
+  /* box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); */
+
+  /* OPCIÓN C: Incrementa el brillo general de la tarjeta (colores e imágenes) un 10% */
+  filter: brightness(1.1);
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: contain;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+/* Valores de Confianza */
+.value-prop-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================================================
+   4. SECCIÓN DEL CARRITO (Protegido para no romper Bootstrap)
+   ========================================================================== */
+/* En tu carrito.html, envuelve todo tu diseño dentro de un div con la clase class="carrito-page" */
+.carrito-page {
+    padding: 3rem 0;
+}
+
+.carrito-page .cart-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .carrito-page .cart-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.carrito-page h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.carrito-page .cart-items {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+
+.carrito-page .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.carrito-page .cart-item:last-child {
+    border-bottom: none;
+}
+
+.carrito-page .item-details {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.carrito-page .item-image-placeholder {
+    width: 80px;
+    height: 80px;
+    background: #e2e8f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.carrito-page .item-info h3 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.carrito-page .item-info p {
+    margin: 0;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+}
+
+.carrito-page .item-qty-price {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+/* Tarjeta de Resumen en Carrito */
+.carrito-page .summary-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    height: fit-content;
+}
+
+.carrito-page .summary-card h2 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #edf2f7;
+    padding-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.carrito-page .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    color: #4a5568;
+}
+
+.carrito-page .summary-row.total {
+    border-top: 1px solid #edf2f7;
+    padding-top: 1rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #1a202c;
+}
+
+/* Botones de checkout */
+.carrito-page .btn-checkout {
+    width: 100%;
+    background: #1a202c;
+    color: #ffffff;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.carrito-page .btn-checkout:hover {
+    background: #2d3748;
+}
+
+.carrito-page .btn-checkout:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+}
+
+
+/* ==========================================================================
+   5. COMPONENTES GLOBALES EXTRA
+   ========================================================================== */
+#status-message {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.placeholder-image {
+    border: 2px dashed #38bdf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(56,189,248,0.1);
+    color: #38bdf8;
+    font-weight: bold;
+    border-radius: 16px;
+}
+
+footer {
+    background: #111827;
+    color: #d1d5db;
+    padding: 80px 0 30px;
+}
+
+footer h6 {
+    color: #f3f4f6;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+footer .text-white-50 {
+    color: #9ca3af !important;
+}
+
+        /* Tipografía Moderna */
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: #f8fafc; color: #1e293b; }
+        
+        /* Encabezado Transaccional */
+        header .navbar-brand { font-size: 2.2rem; font-weight: 800; letter-spacing: -1.5px; }
+        .nav-link { font-weight: 500; color: #475569 !important; }
+        .nav-link:hover { color: #0f172a !important; }
+        
+        /* Controladores de Estado de Sesión en Firebase */
+        .logged-out { display: block; }
+        .logged-in { display: none; }
+        
+        /* SECCIÓN HERO INTEGRADA COMO CARRUSEL EDITORIAL */
+        .hero-carousel { 
+            border-radius: 0 0 24px 24px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+            overflow: hidden;
+        }
+        .hero-slide {
+            padding: 100px 0 140px 0; 
+            min-height: 520px;
+        }
+        .hero-slide h1 { 
+            font-size: 3.8rem; 
+            font-weight: 900; 
+            letter-spacing: -2.5px; 
+            line-height: 1.1; 
+            margin-bottom: 24px; 
+        }
+        .hero-slide .lead { 
+            font-size: 1.25rem; 
+            font-weight: 400; 
+            opacity: 0.85; 
+            margin-bottom: 40px; 
+        }
+        .btn-explorar { 
+            background-color: #fff; 
+            color: #0f172a; 
+            border-radius: 50px; 
+            padding: 16px 40px; 
+            font-weight: 700; 
+            transition: all 0.2s; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-explorar:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+            color: #0f172a;
+        }
+        
+        /* Tarjetas de Categoría Modernas e Intuitivas */
+        .category-container { margin-top: -60px; position: relative; z-index: 10; }
+        .category-card { transition: all 0.3s; border-radius: 16px; overflow: hidden; border: none; padding: 28px; text-decoration: none !important; }
+        .category-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .category-card h4 { font-weight: 800; margin: 0; color: white; }
+        .category-marvel { background: #ed1d24; }
+        .category-anime { background: #3ab0f5; }
+        .category-disney { background: #0065a3; }
+        .category-halloween { background: #1a1a1a; }
+        
+        /* Tarjetas de Producto Profesionales */
+        .product-card { border-radius: 16px; border: 1px solid #e2e8f0; transition: all 0.3s ease; background: #fff; margin-bottom: 30px; overflow: hidden; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); }
+        .product-card img { height: 220px; object-fit: contain; padding: 16px; transition: transform 0.3s ease; }
+        .product-card:hover img { transform: scale(1.05); }
+        
+        /* Sección de Valores de Confianza */
+        .value-prop-icon { width: 70px; height: 70px; border-radius: 50%; background-color: #f1f5f9; color: #1e293b; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; }
+        
+        /* Estilos de Expansión de Detalles (Modales) */
+        .modal-content { border-radius: 24px; overflow: hidden; }
+        .modal-pop-title { font-weight: 800; color: #0f172a; }
+        .badge-exclusive { background-color: #ef4444; color: white; font-weight: 600; padding: 6px 14px; border-radius: 50px; font-size: 0.8rem; }
+        .img-expansion-primary { max-height: 250px; object-fit: contain; }
+        .img-expansion-secondary { max-height: 140px; object-fit: contain; border: 1px solid #e2e8f0; border-radius: 12px; padding: 8px; background: #f8fafc; }
+        
+        /* Pie de Página Profesional */
+        footer { background: #111827; color: #d1d5db; padding: 80px 0 30px; }
+        footer h6 { color: #f3f4f6; font-weight: 700; letter-spacing: 0.5px; }
+        footer .text-white-50 { color: #9ca3af !important; }
+
+
+
+        .data-bs-target{
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+            cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+
+        }
+
+/* Solo lo que main.css NO cubre */
+
+        /* Dropdown oscuro para que sea visible sobre el header */
+        .dropdown-menu {
+            background: #1c1c1c !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+            border-radius: 12px !important;
+            padding: 6px !important;
+            box-shadow: 0 16px 32px rgba(0,0,0,0.4) !important;
+        }
+        .dropdown-menu .dropdown-item {
+            color: rgba(255,255,255,0.75) !important;
+            border-radius: 8px !important;
+            font-size: 0.875rem !important;
+            transition: background 0.15s !important;
+        }
+        .dropdown-menu .dropdown-item:hover {
+            background: rgba(255,255,255,0.1) !important;
+            color: #fff !important;
+        }
+        .dropdown-menu .dropdown-item img {
+            width: 20px; height: 20px; object-fit: contain;
+        }
+
+        /* Animación de entrada de los items */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .cart-item { animation: slideIn 0.3s ease both; }
+
+        /* Imagen dentro del placeholder del item */
+        .item-image-placeholder img {
+            width: 100%; height: 100%;
+            object-fit: contain; border-radius: 8px;
+        }
+
+        /* Badge "Gratis" */
+        .free-badge {
+            background: #e8f5ec;
+            color: #1a5c2e;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 100px;
+        }
+
+        /* Strip de confianza debajo del botón */
+        .trust-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 12px;
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+
+        /* Estado vacío */
+        .empty-state {
+            text-align: center;
+            padding: 3.5rem 1.5rem;
+        }
+        .empty-icon {
+            width: 64px; height: 64px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.75rem; color: #64748b;
+            margin: 0 auto 1rem;
+        }
+
+
+
+
+
+
+
+      
+
+
+
+
+        
+
+        

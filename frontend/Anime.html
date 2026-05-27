@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkoss - Anime y Manga</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <!-- Script de lógica de Firebase -->
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+
+<header class="bg-white border-bottom sticky-top py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="navbar-brand">
+            <a href="index.html" class="text-decoration-none text-dark fw-bold">Funkoss</a>
+        </div>
+        <nav id="menu-navegacion">
+            <ul class="nav align-items-center">
+                <li class="nav-item"><a class="nav-link px-3 text-muted" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link px-3 active fw-bold text-dark" href="galeria.html">Catálogo</a></li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 text-dark position-relative" href="carrito.html">
+                        <i class="bi bi-cart3 fs-5"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-3 text-muted" href="#" role="button" data-bs-toggle="dropdown">Categorías</a>
+                    <ul class="dropdown-menu border-0 shadow-sm dropdown-menu-end mt-2">
+                        <li><a class="dropdown-item py-2" href="disney.html"><img src="./img/pooh.png" alt="Disney" class="me-2" width="20">Disney</a></li>
+                        <li><a class="dropdown-item py-2" href="halloween.html"><img src="./img/horror.png" alt="Halloween" class="me-2" width="20">Halloween</a></li>
+                        <li><a class="dropdown-item py-2" href="Anime.html"><img src="./img/anime.png" alt="Anime" class="me-2" width="20">Anime y Manga</a></li>
+                        <li><a class="dropdown-item py-2" href="marvel.html"><img src="./img/capitan.png" alt="Marvel" class="me-2" width="20">Marvel</a></li>
+                    </ul>
+                </li> 
+                
+                <li class="logged-out" style="display: none;">
+                    <a class="nav-link px-3 text-dark fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#singin-modal">Iniciar Sesión</a>
+                </li>
+                <li class="logged-out" style="display: none;">
+                    <a class="nav-link px-3 text-dark fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#signup-modal">Registrarse</a>
+                </li>
+                
+                <li class="logged-in dropdown" style="display: none;">
+                    <a class="nav-link dropdown-toggle px-3 d-flex align-items-center text-dark" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle fs-5 me-2"></i>Mi Cuenta
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm mt-2">
+                        <li><a class="dropdown-item py-2 text-danger fw-medium" href="#" id="logout">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+            </ul>  
+        </nav>
+    </div>
+</header>
+    <section class="container mt-5 pt-4 text-center">
+        <h1 class="display-5 fw-bold text-uppercase tracking-wide">Colección de Anime y Manga</h1>
+        <p class="text-muted">Figuras de anime y manga de edición especial — desde Saiyajins hasta hechiceros, ninjas y piratas — listas para tu colección.</p>
+        <hr class="w-25 mx-auto my-4" style="border-top: 2px solid #000;">
+    </section>
+
+    <!-- =================================================================
+         CONTENEDOR PRINCIPAL: SÓLO TARJETAS
+         ================================================================= -->
+    <main class="container my-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <!-- 1. GOKU -->
+          <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalGoku" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Goku.png" class="card-img-top p-3 bg-light" alt="Goku">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">GOKU</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">El guerrero Saiyajin protector de la Tierra! Goku llega en su icónica fase de Super Saiyajin, listo para superar sus límites y unirse a las batallas más épicas en tu estante..</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. NARUTO -->
+          <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalNaruto" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Naruto.png" class="card-img-top p-3 bg-light" alt="Naruto  ">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">NARUTO</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">El hiperactivo ninja de la Aldea de la Hoja está listo para cumplir su sueño de convertirse en Hokage, portando su clásico jutsu Rasengan.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$419.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3. LUFFY -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalLuffy" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Luffy.png" class="card-img-top p-3 bg-light" alt="Luffy">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">LUFFY</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">El intrépido capitán de los Piratas de Sombrero de Paja busca el legendario tesoro. Con su icónico sombrero, estira sus brazos para liderar tu colección.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$419.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. TANJIRO -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalTanjiro" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Tanjiro.png" class="card-img-top p-3 bg-light" alt="Tanjiro">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">TANJIRO KAMADO</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">El valiente cazador de demonios domina la respiración del agua. Con su característica haori de cuadros, blande su espada Nichirin para proteger a la humanidad.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. DEKU -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalDeku" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Izuku.png" class="card-img-top p-3 bg-light" alt="Deku">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">IZUKU MIDORIYA</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Plus Ultra! El joven heredero del One For All está listo para convertirse en el héroe número uno vistiendo su traje alfa de la Academia U.A.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. GOJO -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalGojo" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Gojo.webp" class="card-img-top p-3 bg-light" alt="Gojo">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">SATORU GOJO</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">El hechicero más fuerte del mundo rompe las barreras del espacio. Portando su clásica venda sobre los ojos, desata el poder del Vacío Inconmensurable.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. SAILOR MOON -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#SailorMoon" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Sailor.webp" class="card-img-top p-3 bg-light" alt="Sailor Moon">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">SAILOR MOON</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Te castigaré en el nombre de la Luna! La legendaria guardiana del amor y la justicia llega acompañada de su fiel compañera, la gatita Luna.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$719.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 8. LEVI -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalLevi" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Levi.png" class="card-img-top p-3 bg-light" alt="Levi Ackerman">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">LEVI ACKERMAN</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">El soldado más fuerte de la humanidad y líder del escuadrón táctico. Equipado con su equipo de maniobras tridimensionales, no tendrá piedad ante los titanes..</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$439.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. KANEKI -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalKaneki" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Ken.png" class="card-img-top p-3 bg-light" alt="Kaneki">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">KEN KANEKI</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">Atrapado entre dos mundos. El ghoul de un solo ojo acecha las calles de Tokio portando su amenazante máscara de cuero negro y su característico cabello blanco..</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$749.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <!-- =================================================================
+         SECCIÓN DE MODALES: SEPARADOS ABAJO DEL MAIN
+         ================================================================= -->
+
+    <!-- MODAL GOKU -->
+     <div class="modal fade" id="modalGoku" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Super Saiyajin Goku</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Goku.png" class="img-fluid" alt="Goku" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-warning text-dark mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo en la web</span>
+                            <p class="text-muted fst-italic mb-1">Dragon Ball Z</p>
+                            <p class="fs-6 text-secondary mb-4">El guerrero Saiyajin protector de la Tierra! Goku llega en su icónica fase de Super Saiyajin, listo para superar sus límites y unirse a las batallas más épicas en tu estante.</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $379.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalNaruto" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Naruto Uzumaki (Rasengan)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Naruto.png" class="img-fluid" alt="Naruto" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-warning text-dark mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo en la web</span>
+                            <p class="text-muted fst-italic mb-1">Naruto Shippuden</p>
+                            <p class="fs-6 text-secondary mb-4">El hiperactivo ninja de la Aldea de la Hoja está listo para cumplir su sueño de convertirse en Hokage, portando su clásico jutsu Rasengan.</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $419.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalLuffy" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Monkey D. Luffy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Luffy.png" class="img-fluid" alt="Monkey D. Luffy" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-warning text-dark mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo en la web</span>
+                            <p class="text-muted fst-italic mb-1">One Piece</p>
+                            <p class="fs-6 text-secondary mb-4">El intrépido capitán de los Piratas de Sombrero de Paja busca el legendario tesoro. Con su icónico sombrero, estira sus brazos para liderar tu colección.</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $419.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalTanjiro" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Tanjiro Kamado (Water Breathing)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Tanjiro.png" class="img-fluid" alt="Tanjiro Kamado" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-primary text-light mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo</span>
+                            <p class="text-muted fst-italic mb-1">Demon Slayer</p>
+                            <p class="fs-6 text-secondary mb-4">El valiente cazador de demonios domina la respiración del agua. Con su característica haori de cuadros, blande su espada Nichirin para proteger a la humanidad.</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $379.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDeku" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Izuku Midoriya</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Izuku.png" class="img-fluid" alt="Deku" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-primary text-light mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo</span>
+                            <p class="text-muted fst-italic mb-1">My Hero Academia</p>
+                            <p class="fs-6 text-secondary mb-4">¡Plus Ultra! El joven heredero del One For All está listo para convertirse en el héroe número uno vistiendo su traje alfa de la Academia U.A.</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $379.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGojo" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Satoru Gojo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Gojo.webp" class="img-fluid" alt="Gojo" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-primary text-light mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo</span>
+                            <p class="text-muted fst-italic mb-1">Jujutsu Kaisen</p>
+                            <p class="fs-6 text-secondary mb-4">El hechicero más fuerte del mundo rompe las barreras del espacio. Portando su clásica venda sobre los ojos, desata el poder del Vacío Inconmensurable.</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $379.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSailorMoon" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Sailor Moon with Luna</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Sailor.webp" class="img-fluid" alt="Sailor Moon" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-warning text-dark mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo en la web</span>
+                            <p class="text-muted fst-italic mb-1">Sailor Moon Series</p>
+                            <p class="fs-6 text-secondary mb-4">¡Te castigaré en el nombre de la Luna! La legendaria guardiana del amor y la justicia llega acompañada de su fiel compañera, la gatita Luna.</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $719.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalLevi" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Levi Ackerman (Survey Corps)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Levi.png" class="img-fluid" alt="Levi" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-primary text-light mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo</span>
+                            <p class="text-muted fst-italic mb-1">Attack on Titan</p>
+                            <p class="fs-6 text-secondary mb-4">El soldado más fuerte de la humanidad y líder del escuadrón táctico. Equipado con su equipo de maniobras tridimensionales, no tendrá piedad ante los titanes.</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $439.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalKaneki" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Ken Kaneki (Kakuja Form)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Ken.png" class="img-fluid" alt="Kaneki" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-primary text-light mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo</span>
+                            <p class="text-muted fst-italic mb-1">Tokyo Ghoul</p>
+                            <p class="fs-6 text-secondary mb-4">Atrapado entre dos mundos. El ghoul de un solo ojo acecha las calles de Tokio portando su amenazante máscara de cuero negro y su característico cabello blanco.</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $749.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página / Footer -->
+        <footer class="mt-5 py-5 fs-7">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h2 class="text-white fw-bold fs-2 mb-3">Funkoss</h2>
+                    <p>El paraíso de los coleccionistas. Encuentra tu próxima pieza de arte pop.</p>
+                    <div class="d-flex mt-3 fs-5">
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white-50"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="text-white fw-bold mb-3 text-uppercase">Tienda</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="galeria.html" class="text-white-50 text-decoration-none">Ver Catálogo</a></li>
+                        <li><a href="carrito.html" class="text-white-50 text-decoration-none">Mi Carrito</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="text-white fw-bold mb-3 text-uppercase">Categorías</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="marvel.html" class="text-white-50 text-decoration-none">Marvel</a></li>
+                        <li><a href="disney.html" class="text-white-50 text-decoration-none">Disney</a></li>
+                        <li><a href="Anime.html" class="text-white-50 text-decoration-none">Anime</a></li>
+                        <li><a href="halloween.html" class="text-white-50 text-decoration-none">Halloweem</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white opacity-10 my-5">
+            <div class="text-center small">
+                <p>&copy; 2026 Funkoss | Todos los derechos reservados. Barush Navarro</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./js/efectos.js"></script> 
+</body>
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkoss - Galería Completa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./main.css">
+     <script src="./main.js" type="module"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+   
+
+</head>
+<body>
+
+    <header class="bg-white border-bottom sticky-top py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="navbar-brand">
+            <a href="index.html" class="text-decoration-none text-dark fw-bold">Funkoss</a>
+        </div>
+        <nav id="menu-navegacion">
+            <ul class="nav align-items-center">
+                <li class="nav-item"><a class="nav-link px-3 text-muted" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link px-3 active fw-bold text-dark" href="galeria.html">Catálogo</a></li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 text-dark position-relative" href="carrito.html">
+                        <i class="bi bi-cart3 fs-5"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-3 text-muted" href="#" role="button" data-bs-toggle="dropdown">Categorías</a>
+                    <ul class="dropdown-menu border-0 shadow-sm dropdown-menu-end mt-2">
+                        <li><a class="dropdown-item py-2" href="disney.html"><img src="./img/pooh.png" alt="Disney" class="me-2" width="20">Disney</a></li>
+                        <li><a class="dropdown-item py-2" href="halloween.html"><img src="./img/horror.png" alt="Halloween" class="me-2" width="20">Halloween</a></li>
+                        <li><a class="dropdown-item py-2" href="Anime.html"><img src="./img/anime.png" alt="Anime" class="me-2" width="20">Anime y Manga</a></li>
+                        <li><a class="dropdown-item py-2" href="marvel.html"><img src="./img/capitan.png" alt="Marvel" class="me-2" width="20">Marvel</a></li>
+                    </ul>
+                </li> 
+                
+                <li class="logged-out" style="display: none;">
+                    <a class="nav-link px-3 text-dark fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#singin-modal">Iniciar Sesión</a>
+                </li>
+                <li class="logged-out" style="display: none;">
+                    <a class="nav-link px-3 text-dark fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#signup-modal">Registrarse</a>
+                </li>
+                
+                <li class="logged-in dropdown" style="display: none;">
+                    <a class="nav-link dropdown-toggle px-3 d-flex align-items-center text-dark" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle fs-5 me-2"></i>Mi Cuenta
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm mt-2">
+                        <li><a class="dropdown-item py-2 text-danger fw-medium" href="#" id="logout">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+            </ul>  
+        </nav>
+    </div>
+</header>
+
+    <main class="container my-5 py-4">
+        <div class="row mb-5 text-center">
+            <div class="col-lg-6 mx-auto">
+                <h1 class="fw-black display-5 tracking-tight text-dark mb-3" style="font-weight: 900; letter-spacing: -1.5px;">Catálogo Completo</h1>
+                <p class="text-muted fs-5">Explora las piezas más exclusivas y cotizadas de nuestra colección de figuras Pop! Colecciona tu pasión.</p>
+            </div>
+        </div>
+
+        <div id="status-message"></div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            <div class="col">
+                <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalPennywise" style="cursor: pointer;">
+                    <div class="text-center bg-light rounded-4 mb-3 position-relative">
+                        <img src="./img/PENNYWISE.png" class="w-100 img-fluid" alt="Pennywise">
+                    </div>
+                    <div class="px-2">
+                        <span class="text-uppercase text-danger fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Halloween</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">PENNYWISE</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Pennywise™ con cabeza! Este payaso exclusivo de Derry seguramente aterrorizará tu colección.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalWolverine" style="cursor: pointer;">
+                    <div class="text-center bg-light rounded-4 mb-3">
+                        <img src="./img/Wolverine.png" class="w-100 img-fluid" alt="Wolverine">
+                    </div>
+                    <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Marvel</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">WOLVERINE</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Reúne a este exclusivo POP! de Wolverine junto a su contraparte de Deadpool para completar su icónica escena final.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$419.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalDeadpool" style="cursor: pointer;">
+                    <div class="text-center bg-light rounded-4 mb-3">
+                        <img src="./img/Deadpool.png" class="w-100 img-fluid" alt="Deadpool">
+                    </div>
+                    <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Marvel</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">DEADPOOL</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Reúne a este bocazas exclusivo POP! Además de Deadpool con su variante de traje dañado listo para el combate.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$419.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalKuzan" style="cursor: pointer;">
+                    <div class="text-center bg-light rounded-4 mb-3">
+                        <img src="./img/Kuzan.png" class="w-100 img-fluid" alt="Kuzan">
+                    </div>
+                    <div class="px-2">
+                        <span class="text-uppercase text-info fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">KUZAN</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Promulga la "Lazy Justice" en todos los mares junto al poderoso Almirante Kuzan desatando su fruta del diablo!</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalLuffy" style="cursor: pointer;">
+                    <div class="text-center bg-light rounded-4 mb-3">
+                        <img src="./img/Luffy.png" class="w-100 img-fluid" alt="Monkey D. Luffy">
+                    </div>
+                    <div class="px-2">
+                        <span class="text-uppercase text-info fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">MONKEY D. LUFFY</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">Monkey D. Luffy está decidido a convertirse en el próximo Rey de los Piratas vistiendo su outfit del arco Whole Cake.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalSpiderMan" style="cursor: pointer;">
+                    <div class="text-center bg-light rounded-4 mb-3">
+                        <img src="./img/Spider-Man.png" class="w-100 img-fluid" alt="Spider-Man">
+                    </div>
+                    <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Marvel</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">SPIDER-MAN</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Resiste el oscuro poder de Venom con este exclusivo POP! de Spider-Man siendo envuelto por el simbionte alienígena.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalAlien" style="cursor: pointer;">
+                    <div class="text-center bg-light rounded-4 mb-3">
+                        <img src="./img/Alien.png" class="w-100 img-fluid" alt="Xenomorph">
+                    </div>
+                    <div class="px-2">
+                        <span class="text-uppercase text-secondary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Ciencia Ficción</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">XENOMORPH</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">Una gran amenaza extraterrestre ha llegado. El Xenomofo Deluxe viene acompañado de su pequeña e indefensa presa.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$719.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalGodzilla" style="cursor: pointer;">
+                    <div class="text-center bg-light rounded-4 mb-3">
+                        <img src="./img/Godzilla.png" class="w-100 img-fluid" alt="Godzilla">
+                    </div>
+                    <div class="px-2">
+                        <span class="text-uppercase text-info fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Kaijus</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">GODZILLA</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Una gigantesca criatura que hace temblar la tierra se abre paso con fuego radioactivo hacia tu repisa!</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$439.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalTengen" style="cursor: pointer;">
+                    <div class="text-center bg-light rounded-4 mb-3">
+                        <img src="./img/Tengen.png" class="w-100 img-fluid" alt="Tengen Uzui">
+                    </div>
+                    <div class="px-2">
+                        <span class="text-uppercase text-info fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Anime y Manga</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">TENGEN UZUI</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">Dale una extravagante bienvenida al Pilar del Sonido de Demon Slayer en este majestuoso Pop! Moment coleccionable.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$749.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="modal fade" id="modalPennywise" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 bg-light py-3">
+                    <h5 class="modal-title modal-pop-title fs-3">¡Pop! Pennywise</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <img src="./img/Pennywise_POP.png" class="img-fluid img-expansion-primary mb-4" alt="Pennywise Pop">
+                    <div class="mb-3">
+                        <span class="badge-exclusive">Exclusivo en la web</span>
+                    </div>
+                    <p class="text-muted fs-5 fst-italic mb-3">¡Bienvenido a Derry!</p>
+                    <h3 class="fw-black text-dark font-monospace" style="font-weight: 800;">MEX $379.00</h3>
+                </div>
+                <div class="modal-footer border-0 p-3 bg-light d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark px-4 rounded-pill btn-agregar-carrito" data-id="2" data-nombre="¡Pop! Pennywise" data-precio="379" data-imagen="./img/Pennywise_POP.png">
+                        <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalWolverine" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 bg-light py-3">
+                    <h5 class="modal-title modal-pop-title fs-3">Pop! Plus Wolverine (Time Ripper)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <img src="./img/Wolverine_POP.png" class="img-fluid img-expansion-primary mb-4" alt="Wolverine Pop">
+                    <div class="mb-3">
+                        <span class="badge-exclusive">Exclusivo en la web</span>
+                    </div>
+                    <p class="text-muted fs-5 fst-italic mb-3">Comics & Superheroes</p>
+                    <h3 class="fw-black text-dark font-monospace" style="font-weight: 800;">MEX $419.00</h3>
+                </div>
+                <div class="modal-footer border-0 p-3 bg-light d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark px-4 rounded-pill btn-agregar-carrito" data-id="3" data-nombre="Pop! Plus Wolverine (Time Ripper)" data-precio="419" data-imagen="./img/Wolverine_POP.png">
+                        <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDeadpool" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 bg-light py-3">
+                    <h5 class="modal-title modal-pop-title fs-3">Pop! Plus Deadpool (Time Ripper)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <img src="./img/Deadpool_POP.png" class="img-fluid img-expansion-primary mb-4" alt="Deadpool Pop">
+                    <div class="mb-3">
+                       <span class="badge-exclusive">Exclusivo en la web</span>
+
+                    </div>
+                    <p class="text-muted fs-5 fst-italic mb-3">Comics & Superheroes</p>
+                    <h3 class="fw-black text-dark font-monospace" style="font-weight: 800;">MEX $419.00</h3>
+                </div>
+                <div class="modal-footer border-0 p-3 bg-light d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark px-4 rounded-pill btn-agregar-carrito" data-id="4" data-nombre="Pop! Plus Deadpool (Time Ripper)" data-precio="419" data-imagen="./img/Deadpool_POP.png">
+                        <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalKuzan" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 bg-light py-3">
+                    <h5 class="modal-title modal-pop-title fs-3">Pop! Kuzan (Ice Block Partisan)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <img src="./img/Kuzan_POP.png" class="img-fluid img-expansion-primary mb-4" alt="Kuzan Pop">
+                    <div class="mb-3">
+                        <span class="badge bg-primary text-light fw-bold px-3 py-2 rounded-pill fs-7" style="font-size:0.8rem;">Exclusivo de Tienda</span>
+                    </div>
+                    <p class="text-muted fs-5 fst-italic mb-3">Anime & Manga</p>
+                    <h3 class="fw-black text-dark font-monospace" style="font-weight: 800;">MEX $379.00</h3>
+                </div>
+                <div class="modal-footer border-0 p-3 bg-light d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark px-4 rounded-pill btn-agregar-carrito" data-id="5" data-nombre="Pop! Kuzan (Ice Block Partisan)" data-precio="379" data-imagen="./img/Kuzan_POP.png">
+                        <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalLuffy" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 bg-light py-3">
+                    <h5 class="modal-title modal-pop-title fs-3">Pop! Monkey D. Luffy (Whole Cake Arc)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <img src="./img/LuffyWhole.png" class="img-fluid img-expansion-primary mb-4" alt="Luffy Pop">
+                    <div class="mb-3">
+                        <span class="badge bg-primary text-light fw-bold px-3 py-2 rounded-pill fs-7" style="font-size:0.8rem;">Exclusivo</span>
+                    </div>
+                    <p class="text-muted fs-5 fst-italic mb-3">Anime & Manga</p>
+                    <h3 class="fw-black text-dark font-monospace" style="font-weight: 800;">MEX $379.00</h3>
+                </div>
+                <div class="modal-footer border-0 p-3 bg-light d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark px-4 rounded-pill btn-agregar-carrito" data-id="6" data-nombre="Pop! Monkey D. Luffy (Whole Cake Arc)" data-precio="379" data-imagen="./img/LuffyWhole.png">
+                        <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSpiderMan" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 bg-light py-3">
+                    <h5 class="modal-title modal-pop-title fs-3">Pop! Spider-Man (Symbiote Bonding)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <img src="./img/Spider-Man_POP.png" class="img-fluid img-expansion-primary mb-4" alt="Spider-Man Pop">
+                    <div class="mb-3">
+                        <span class="badge bg-primary text-light fw-bold px-3 py-2 rounded-pill fs-7" style="font-size:0.8rem;">Exclusivo</span>
+                    </div>
+                    <p class="text-muted fs-5 fst-italic mb-3">Comics & Superheroes</p>
+                    <h3 class="fw-black text-dark font-monospace" style="font-weight: 800;">MEX $379.00</h3>
+                </div>
+                <div class="modal-footer border-0 p-3 bg-light d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark px-4 rounded-pill btn-agregar-carrito" data-id="7" data-nombre="Pop! Spider-Man (Symbiote Bonding)" data-precio="379" data-imagen="./img/Spider-Man_POP.png">
+                        <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAlien" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 bg-light py-3">
+                    <h5 class="modal-title modal-pop-title fs-3">Pop! Deluxe Xenomorph with Jonesy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <img src="./img/Alien_X.png" class="img-fluid img-expansion-primary mb-4" alt="Alien Pop">
+                    <div class="mb-3">
+                        <span class="badge-exclusive">Exclusivo en la web</span>
+                    </div>
+                    <p class="text-muted fs-5 fst-italic mb-3">Ciencia Ficción</p>
+                    <h3 class="fw-black text-dark font-monospace" style="font-weight: 800;">MEX $719.00</h3>
+                </div>
+                <div class="modal-footer border-0 p-3 bg-light d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark px-4 rounded-pill btn-agregar-carrito" data-id="8" data-nombre="Pop! Deluxe Xenomorph with Jonesy" data-precio="719" data-imagen="./img/Alien_X.png">
+                        <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGodzilla" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 bg-light py-3">
+                    <h5 class="modal-title modal-pop-title fs-3">Pop! Premium Destoroyah (Deco)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <img src="./img/Destroyah_POP.png" class="img-fluid img-expansion-primary mb-4" alt="Godzilla Pop">
+                    <div class="mb-3">
+                        <span class="badge bg-primary text-light fw-bold px-3 py-2 rounded-pill fs-7" style="font-size:0.8rem;">Exclusivo</span>
+                    </div>
+                    <p class="text-muted fs-5 fst-italic mb-3">Anime & Manga</p>
+                    <h3 class="fw-black text-dark font-monospace" style="font-weight: 800;">MEX $439.00</h3>
+                </div>
+                <div class="modal-footer border-0 p-3 bg-light d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark px-4 rounded-pill btn-agregar-carrito" data-id="9" data-nombre="Pop! Premium Destoroyah (Deco)" data-precio="439" data-imagen="./img/Destroyah_POP.png">
+                        <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalTengen" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header border-0 bg-light py-3">
+                    <h5 class="modal-title modal-pop-title fs-3">Pop! Moment Tengen with His Wives</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <img src="./img/Tengen_POP.png" class="img-fluid img-expansion-primary mb-4" alt="Tengen Pop">
+                    <div class="mb-3">
+                        <span class="badge bg-primary text-light fw-bold px-3 py-2 rounded-pill fs-7" style="font-size:0.8rem;">Exclusivo</span>
+                    </div>
+                    <p class="text-muted fs-5 fst-italic mb-3">Anime & Manga</p>
+                    <h3 class="fw-black text-dark font-monospace" style="font-weight: 800;">MEX $749.00</h3>
+                </div>
+                <div class="modal-footer border-0 p-3 bg-light d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary px-4 rounded-pill" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-dark px-4 rounded-pill btn-agregar-carrito" data-id="10" data-nombre="Pop! Moment Tengen with His Wives" data-precio="749" data-imagen="./img/Tengen_POP.png">
+                        <i class="bi bi-cart-plus me-2"></i>Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <footer class="mt-5 py-5 fs-7">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h2 class="text-white fw-bold fs-2 mb-3">Funkoss</h2>
+                    <p>El paraíso de los coleccionistas. Encuentra tu próxima pieza de arte pop.</p>
+                    <div class="d-flex mt-3 fs-5">
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white-50"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="text-white fw-bold mb-3 text-uppercase">Tienda</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="galeria.html" class="text-white-50 text-decoration-none">Ver Catálogo</a></li>
+                        <li><a href="carrito.html" class="text-white-50 text-decoration-none">Mi Carrito</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="text-white fw-bold mb-3 text-uppercase">Categorías</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="marvel.html" class="text-white-50 text-decoration-none">Marvel</a></li>
+                        <li><a href="disney.html" class="text-white-50 text-decoration-none">Disney</a></li>
+                        <li><a href="Anime.html" class="text-white-50 text-decoration-none">Anime</a></li>
+                        <li><a href="halloween.html" class="text-white-50 text-decoration-none">Halloweem</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white opacity-10 my-5">
+            <div class="text-center small">
+                <p>&copy; 2026 Funkoss | Todos los derechos reservados. Barush Navarro</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/efectos.js"></script> 
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkoss - Colección Halloween</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <!-- Script de lógica de Firebase -->
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+
+<header class="bg-white border-bottom sticky-top py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="navbar-brand">
+            <a href="index.html" class="text-decoration-none text-dark fw-bold">Funkoss</a>
+        </div>
+        <nav id="menu-navegacion">
+            <ul class="nav align-items-center">
+                <li class="nav-item"><a class="nav-link px-3 text-muted" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link px-3 active fw-bold text-dark" href="galeria.html">Catálogo</a></li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 text-dark position-relative" href="carrito.html">
+                        <i class="bi bi-cart3 fs-5"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-3 text-muted" href="#" role="button" data-bs-toggle="dropdown">Categorías</a>
+                    <ul class="dropdown-menu border-0 shadow-sm dropdown-menu-end mt-2">
+                        <li><a class="dropdown-item py-2" href="disney.html"><img src="./img/pooh.png" alt="Disney" class="me-2" width="20">Disney</a></li>
+                        <li><a class="dropdown-item py-2" href="halloween.html"><img src="./img/horror.png" alt="Halloween" class="me-2" width="20">Halloween</a></li>
+                        <li><a class="dropdown-item py-2" href="Anime.html"><img src="./img/anime.png" alt="Anime" class="me-2" width="20">Anime y Manga</a></li>
+                        <li><a class="dropdown-item py-2" href="marvel.html"><img src="./img/capitan.png" alt="Marvel" class="me-2" width="20">Marvel</a></li>
+                    </ul>
+                </li> 
+                
+                <li class="logged-out" style="display: none;">
+                    <a class="nav-link px-3 text-dark fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#singin-modal">Iniciar Sesión</a>
+                </li>
+                <li class="logged-out" style="display: none;">
+                    <a class="nav-link px-3 text-dark fw-medium" href="#" data-bs-toggle="modal" data-bs-target="#signup-modal">Registrarse</a>
+                </li>
+                
+                <li class="logged-in dropdown" style="display: none;">
+                    <a class="nav-link dropdown-toggle px-3 d-flex align-items-center text-dark" href="#" role="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle fs-5 me-2"></i>Mi Cuenta
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm mt-2">
+                        <li><a class="dropdown-item py-2 text-danger fw-medium" href="#" id="logout">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+            </ul>  
+        </nav>
+    </div>
+</header>
+
+    <!-- Título de la Sección -->
+    <section class="container mt-5 pt-4 text-center">
+        <h1 class="display-5 fw-bold text-uppercase tracking-wide">Colección Halloween</h1>
+        <p class="text-muted">Desentierra las piezas más aterradoras y exclusivas para tu colección.</p>
+        <hr class="w-25 mx-auto my-4" style="border-top: 2px solid #000;">
+    </section>
+
+    <!-- Catálogo de Tarjetas -->
+    <main class="container mb-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4">
+            
+            <!-- Tarjeta 1: PENNYWISE -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalPennywise" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/PENNYWISE.png" class="card-img-top p-3 bg-light" alt="Pennywise">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Halloween</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">PENNYWISE</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Tú también flotarás! El espeluznante payaso de Derry regresa para unirse a tu estante...</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: GHOSTFACE -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalGhostface" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Ghostface.png" class="card-img-top p-3 bg-light" alt="Ghostface">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Halloween</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">GHOSTFACE</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¿Cuál es tu película de terror favorita? El acosador de Woodsboro llega con su túnica negra...</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$419.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: CHUCKY -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalChucky" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Chuky.png" class="card-img-top p-3 bg-light" alt="Chucky">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Halloween</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">CHUCKY</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">El muñeco Good Guy poseído por el alma de Charles Lee Ray busca un nuevo mejor amigo...</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$419.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4: MICHAEL MYERS -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalMichael" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/MichaelMyers.png" class="card-img-top p-3 bg-light" alt="MICHAEL MYERS">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Halloween</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">MICHAEL MYERS</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">La pura personificación del mal regresa a Haddonfield esta noche de brujas...</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5: FREDDY KRUEGER -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalFreddy" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/FreddyKruger.png" class="card-img-top p-3 bg-light" alt="Freddy Krueger">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Halloween</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">FREDDY KRUEGER</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡No te quedes dormido! El demoledor amo de las pesadillas llega vistiendo su clásico suéter...</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 6: JASON VOORHEES -->
+           <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalJason" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/JasonVorhees.png" class="card-img-top p-3 bg-light" alt="Jason Voorhees">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Halloween</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">JASON VOORHEES</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">El implacable asesino de Crystal Lake emerge del fondo del lago portando su mítica máscara...</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$379.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 7: SAM -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalSam" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Sam.png" class="card-img-top p-3 bg-light" alt="Sam">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Halloween</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">SAM</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Sigue las reglas tradicionales de Halloween o enfréntate a las consecuencias!...</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$619.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 8: BEETLEJUICE -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalBeetlejuice" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Beetlejuice.png" class="card-img-top p-3 bg-light" alt="Beetlejuice">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Halloween</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">BEETLEJUICE</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">¡Di su nombre tres veces! El irreverente súper fantasma está listo para armar un caos espectral...</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$439.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 9: DEMOGORGON -->
+            <div class="col">
+                 <div class="product-card h-100 p-3" data-bs-toggle="modal" data-bs-target="#modalDemogorgon" style="cursor: pointer;">
+                  <div class="text-center bg-light rounded-4 mb-3">
+                    <img src="./img/Demogorgon.png" class="card-img-top p-3 bg-light" alt="Demogorgon">
+                  </div>
+                        <div class="px-2">
+                        <span class="text-uppercase text-primary fw-bold tracking-wider fs-7" style="font-size: 0.75rem;">Halloween</span>
+                        <h5 class="fw-bold fs-5 my-1 text-dark">DEMOGORGON</h5>
+                        <p class="text-muted small mb-3 line-clamp-2">Directo desde las profundidades del Upside Down, esta temible criatura llega abriendo sus fauces...</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto pt-2">
+                            <span class="fw-bold fs-5 text-dark">$749.00</span>
+                            <span class="badge bg-dark-subtle text-dark border rounded-pill px-3 py-1 small">Ver Detalle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ================= MODALS OPTIMIZADOS CON DISEÑO EDITORIAL ================= -->
+
+    <!-- MODAL PENNYWISE -->
+    <div class="modal fade" id="modalPennywise" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Pennywise (With Balloon)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Pennywise_POP.png" class="img-fluid" alt="Pennywise" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-warning text-dark mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo en la web</span>
+                            <p class="text-muted fst-italic mb-1">Horror Classics</p>
+                            <p class="fs-6 text-secondary mb-4">"¡Tú también flotarás! El espeluznante payaso de Derry regresa para unirse a tu estante. Sosteniendo su icónico globo rojo, está listo para sembrar el terror en tu colección."</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $379.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL GHOSTFACE -->
+    <div class="modal fade" id="modalGhostface" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Ghostface (Scream Edition)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Ghostface.png" class="img-fluid" alt="Ghostface" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-warning text-dark mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo en la web</span>
+                            <p class="text-muted fst-italic mb-1">Scream Series</p>
+                            <p class="fs-6 text-secondary mb-4">"¿Cuál es tu película de terror favorita? El acosador de Woodsboro llega con su túnica negra y su perturbadora máscara. Responde al teléfono bajo tu propio riesgo."</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $419.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CHUCKY -->
+    <div class="modal fade" id="modalChucky" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Chucky (Child's Play)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Chuky.png" class="img-fluid" alt="Chucky" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-warning text-dark mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo en la web</span>
+                            <p class="text-muted fst-italic mb-1">Child's Play</p>
+                            <p class="fs-6 text-secondary mb-4">"El muñeco Good Guy poseído por el alma de Charles Lee Ray busca un nuevo mejor amigo. No te dejes engañar por su overol, esconde intenciones sumamente siniestras."</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $419.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL MICHAEL MYERS -->
+    <div class="modal fade" id="modalMichael" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Michael Myers (Halloween Movie)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/MichaelMyers.png" class="img-fluid" alt="Michael Myers" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-primary text-light mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo</span>
+                            <p class="text-muted fst-italic mb-1">Halloween Slasher</p>
+                            <p class="fs-6 text-secondary mb-4">"La pura personificación del mal regresa a Haddonfield esta noche de brujas. Con su fría e inexpresiva máscara blanca, este Pop! acechará en silencio desde tu estantería."</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $379.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL FREDDY KRUEGER -->
+    <div class="modal fade" id="modalFreddy" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Freddy Krueger (Nightmare on Elm St.)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/FreddyKruger.png" class="img-fluid" alt="Freddy Krueger" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-primary text-light mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo</span>
+                            <p class="text-muted fst-italic mb-1">A Nightmare on Elm Street</p>
+                            <p class="fs-6 text-secondary mb-4">"¡No te quedes dormido! El demoledor amo de las pesadillas llega vistiendo su clásico suéter de rayas y su icónico guante con afiladas garras listo para invadir tus sueños."</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $379.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL JASON VOORHEES -->
+    <div class="modal fade" id="modalJason" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Jason Voorhees (Friday the 13th)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/JasonVorhees.png" class="img-fluid" alt="Jason Voorhees" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-primary text-light mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo</span>
+                            <p class="text-muted fst-italic mb-1">Friday the 13th</p>
+                            <p class="fs-6 text-secondary mb-4">"El implacable asesino de Crystal Lake emerge del fondo del lago portando su mítica máscara de hockey. Un pilar del cine de terror que no puede faltar en Halloween."</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $379.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL SAM -->
+    <div class="modal fade" id="modalSam" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Deluxe Sam on Steps (Trick 'r Treat)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Sam.png" class="img-fluid" alt="Sam" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-warning text-dark mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo en la web</span>
+                            <p class="text-muted fst-italic mb-1">Trick 'r Treat</p>
+                            <p class="fs-6 text-secondary mb-4">"¡Sigue las reglas tradicionales de Halloween o enfréntate a las consecuencias! El misterioso espíritu navideño de Trick 'r Treat llega con su saco de arpillera y su letal paleta."</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $719.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL BEETLEJUICE -->
+    <div class="modal fade" id="modalBeetlejuice" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Premium Beetlejuice (Glow in the Dark)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Beetlejuice.png" class="img-fluid" alt="Beetlejuice" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-primary text-light mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo</span>
+                            <p class="text-muted fst-italic mb-1">Horror Comedy</p>
+                            <p class="fs-6 text-secondary mb-4">"¡Di su nombre tres veces! El irreverente súper fantasma del inframundo está listo para armar un caos espectral en tu colección vistiendo su clásico traje a rayas negras y blancas."</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $439.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DEMOGORGON -->
+    <div class="modal fade" id="modalDemogorgon" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold fs-4">Pop! Moment Demogorgon Attack</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center bg-light rounded p-4">
+                            <img src="./img/Demogorgon.png" class="img-fluid" alt="Demogorgon" style="max-height: 300px;">
+                        </div>
+                        <div class="col-md-6 ps-md-4 mt-3 mt-md-0">
+                            <span class="badge bg-primary text-light mb-2 px-3 py-2 fs-6 fw-bold">Exclusivo</span>
+                            <p class="text-muted fst-italic mb-1">Stranger Things</p>
+                            <p class="fs-6 text-secondary mb-4">"Directo desde las profundidades del Upside Down, esta temible criatura llega abriendo sus fauces pétalos repletas de dientes. El toque perfecto de terror moderno de Stranger Things."</p>
+                            <h3 class="fw-bold text-dark mb-4">MEX $749.00</h3>
+                            <button type="button" class="btn btn-dark w-100 py-2 fw-bold"><i class="bi bi-cart-plus me-2"></i>Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+        <footer class="mt-5 py-5 fs-7">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h2 class="text-white fw-bold fs-2 mb-3">Funkoss</h2>
+                    <p>El paraíso de los coleccionistas. Encuentra tu próxima pieza de arte pop.</p>
+                    <div class="d-flex mt-3 fs-5">
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white-50 me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white-50"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="text-white fw-bold mb-3 text-uppercase">Tienda</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="galeria.html" class="text-white-50 text-decoration-none">Ver Catálogo</a></li>
+                        <li><a href="carrito.html" class="text-white-50 text-decoration-none">Mi Carrito</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="text-white fw-bold mb-3 text-uppercase">Categorías</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="marvel.html" class="text-white-50 text-decoration-none">Marvel</a></li>
+                        <li><a href="disney.html" class="text-white-50 text-decoration-none">Disney</a></li>
+                        <li><a href="Anime.html" class="text-white-50 text-decoration-none">Anime</a></li>
+                        <li><a href="halloween.html" class="text-white-50 text-decoration-none">Halloweem</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-white opacity-10 my-5">
+            <div class="text-center small">
+                <p>&copy; 2026 Funkoss | Todos los derechos reservados. Barush Navarro</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/efectos.js"></script> 
+</body>
+</html>
