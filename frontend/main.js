@@ -8,13 +8,20 @@ import "./app/singinform.js";
 import "./app/logout.js";
 import "./app/googleLogin.js";
 import "./app/facebookLogin.js";
-import "./app/githubLogin.js";
 import "./js/efectos.js";
-import "./js/agregar.js";
 
 // Cargamos carrito.js solo en la página del carrito
 if (window.location.pathname.includes("carrito.html")) {
     import("./js/carrito.js");
+}
+
+// Cargamos el módulo de agregar al carrito en páginas con productos
+const paginasConProductos = ["galeria.html", "disney.html", "halloween.html", "Anime.html", "anime.html", "marvel.html", "index.html"];
+const pathActual = window.location.pathname;
+const esProductos = paginasConProductos.some(p => pathActual.includes(p)) || pathActual === "/" || pathActual.endsWith("/");
+
+if (esProductos) {
+    import("./js/agregar-carrito.js");
 }
 
 onAuthStateChanged(auth, (user) => {
