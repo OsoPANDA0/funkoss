@@ -59,6 +59,8 @@ async function cargarCarritoFirestore(uid) {
         });
 
         if (cartTotalEl) cartTotalEl.innerText = `$${total.toFixed(2)} MXN`;
+        const subtotalEl = document.getElementById('cart-subtotal');
+        if (subtotalEl) subtotalEl.innerText = `$${total.toFixed(2)}`;
         if (btnComprar)  btnComprar.disabled = false;
 
     } catch (error) {
