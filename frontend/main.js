@@ -10,6 +10,7 @@ import "./app/googleLogin.js";
 import "./app/facebookLogin.js";
 import "./app/githubLogin.js";
 import "./js/efectos.js";
+import "./js/agregar.js";
 
 // Cargamos carrito.js solo en la página del carrito
 if (window.location.pathname.includes("carrito.html")) {
